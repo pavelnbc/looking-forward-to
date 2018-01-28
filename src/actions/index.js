@@ -11,7 +11,7 @@ export const OPEN_DESCRIPTION_FIELD = 'OPEN_DESCRIPTION_FIELD';
 export const ADD_COMMENT = 'ADD_COMMENT';
 
 export function downloadDesires() {
-    return axios.get('http://localhost:5000/api/v1/desires')
+    return axios.get('http://looking-server.herokuapp.com/api/v1/desires')
         .then(response => response.data)
         .then(desires => ({
             type: DOWNLOAD_DESIRES,
@@ -24,7 +24,7 @@ export function completeDesire(id) {
     let param1 = "isCompleted";
     let param2 = "isDescriptionOpen";
 
-    return axios.put(`http://localhost:5000/api/v1/complete-desire/${id}`, { param1, param2 })
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/complete-desire/${id}`, { param1, param2 })
         .then(response => response.data)
         .then(id => ({
             type: COMPLETE_DESIRE,
@@ -36,7 +36,7 @@ export function completeDesire(id) {
 export function editDesire(id, title) {
     let param1 = "isEditing";
 
-    return axios.put(`http://localhost:5000/api/v1/edit-desire/${id}`, { param1, title})
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/edit-desire/${id}`, { param1, title})
         .then(response => response.data)
         .then((data) => ({
             type: EDIT_DESIRE,
@@ -50,7 +50,7 @@ export function openEditForm(id) {
     let param1 = "isEditing";
     let param2 = "isDescriptionOpen";
 
-    return axios.put(`http://localhost:5000/api/v1/open-edit-form/${id}`, { param1, param2 })
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-edit-form/${id}`, { param1, param2 })
         .then(response => response.data)
         .then(id => ({
             type: OPEN_EDIT_FORM,
@@ -62,7 +62,7 @@ export function openEditForm(id) {
 export function openDescriptionField(id) {
     let param1 = "isDescriptionOpen";
 
-    return axios.put(`http://localhost:5000/api/v1/open-description-field/${id}`, { param1 })
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-description-field/${id}`, { param1 })
         .then(response => response.data)
         .then(id => ({
             type: OPEN_DESCRIPTION_FIELD,
@@ -72,7 +72,7 @@ export function openDescriptionField(id) {
 }
 
 export function addDesire(title, description) {
-    return axios.post('http://localhost:5000/api/v1/desires', { title, description })
+    return axios.post('https://looking-server.herokuapp.com/api/v1/desires', { title, description })
         .then(response => response.data)
         .then(desire => ({
             type: ADD_DESIRE,
@@ -82,7 +82,7 @@ export function addDesire(title, description) {
 }
 
 export function addComment(id, comment) {
-    return axios.post(`http://localhost:5000/api/v1/add-comment/${id}`, { comment })
+    return axios.post(`https://looking-server.herokuapp.com/api/v1/add-comment/${id}`, { comment })
         .then(response => response.data)
         .then((data) => ({
             type: ADD_COMMENT,
@@ -93,7 +93,7 @@ export function addComment(id, comment) {
 }
 
 export function deleteDesire(id) {
-    return axios.delete(`http://localhost:5000/api/v1/delete-desire/${id}`)
+    return axios.delete(`https://looking-server.herokuapp.com/api/v1/delete-desire/${id}`)
         .then(response => response.data)
         .then(() => ({
             type: DELETE_DESIRE,
