@@ -1,4 +1,3 @@
-// import desires from '../data/desires.json';
 import axios from 'axios';
 
 export const DOWNLOAD_DESIRES = 'DOWNLOAD_DESIRES';
@@ -21,10 +20,7 @@ export function downloadDesires() {
 }
 
 export function completeDesire(id) {
-    let param1 = "isCompleted";
-    let param2 = "isDescriptionOpen";
-
-    return axios.put(`https://looking-server.herokuapp.com/api/v1/complete-desire/${id}`, { param1, param2 })
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/complete-desire/${id}`)
         .then(response => response.data)
         .then(id => ({
             type: COMPLETE_DESIRE,
@@ -34,9 +30,7 @@ export function completeDesire(id) {
 }
 
 export function editDesire(id, title) {
-    let param1 = "isEditing";
-
-    return axios.put(`https://looking-server.herokuapp.com/api/v1/edit-desire/${id}`, { param1, title})
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/edit-desire/${id}`, { title })
         .then(response => response.data)
         .then((data) => ({
             type: EDIT_DESIRE,
@@ -47,10 +41,7 @@ export function editDesire(id, title) {
 }
 
 export function openEditForm(id) {
-    let param1 = "isEditing";
-    let param2 = "isDescriptionOpen";
-
-    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-edit-form/${id}`, { param1, param2 })
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-edit-form/${id}`)
         .then(response => response.data)
         .then(id => ({
             type: OPEN_EDIT_FORM,
@@ -60,10 +51,7 @@ export function openEditForm(id) {
 }
 
 export function openDescriptionField(id) {
-    let param1 = "isDescriptionOpen";
-    let param2 = "isEditing";
-
-    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-description-field/${id}`, { param1, param2 })
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-description-field/${id}`)
         .then(response => response.data)
         .then(id => ({
             type: OPEN_DESCRIPTION_FIELD,

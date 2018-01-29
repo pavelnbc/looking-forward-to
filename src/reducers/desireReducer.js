@@ -18,6 +18,7 @@ function desireReducer(state = [], action) {
             let closed_desription_fields = state.filter((desire) => {
                 desire.isDescriptionOpen = false;
                 desire.isEditing = false;
+
                 return desire
             });
             return [...closed_desription_fields, action.desire];
