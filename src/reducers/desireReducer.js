@@ -42,9 +42,9 @@ function desireReducer(state = [], action) {
                     desire.isEditing = false
                 }
                 return desire
-            })
+            });
 
-            return opened_desire_form
+            return opened_desire_form;
 
         case OPEN_DESCRIPTION_FIELD:
             let opened_fields = state.filter((desire) => {
@@ -53,9 +53,6 @@ function desireReducer(state = [], action) {
                 } else {
                     desire.isDescriptionOpen = false
                 }
-
-                desire.isEditing = false;
-
                 return desire
             });
 
@@ -79,10 +76,6 @@ function desireReducer(state = [], action) {
 
             return delete_desires;
 
-        default:
-            return state
-
-
         case ADD_COMMENT:
             let comment_desires = state.filter((desire) => {
                 if(desire.id === action.id) {
@@ -90,9 +83,15 @@ function desireReducer(state = [], action) {
                 }
 
                 return desire
-            })
+            });
 
-            return comment_desires
+            return comment_desires;
+
+        default:
+            return state;
+
+
+
     }
 }
 
