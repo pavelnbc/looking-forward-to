@@ -11,7 +11,7 @@ export const OPEN_DESCRIPTION_FIELD = 'OPEN_DESCRIPTION_FIELD';
 export const ADD_COMMENT = 'ADD_COMMENT';
 
 export function downloadDesires() {
-    return axios.get('http://looking-server.herokuapp.com/api/v1/desires')
+    return axios.get('https://looking-server.herokuapp.com/api/v1/desires')
         .then(response => response.data)
         .then(desires => ({
             type: DOWNLOAD_DESIRES,

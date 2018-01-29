@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 
 function Button({ icon, action, ...props }) {
@@ -8,5 +9,11 @@ function Button({ icon, action, ...props }) {
         </div>
     )
 }
+
+Button.propTypes = {
+    icon: PropTypes.string,
+    action: PropTypes.func,
+    props: PropTypes.any
+};
 
 export default Button

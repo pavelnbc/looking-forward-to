@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Summary({ desires }) {
     let completed = desires.filter((desire) => {
@@ -22,5 +23,9 @@ function Summary({ desires }) {
         </tbody>
     )
 }
+
+Summary.propTypes = {
+    desires: PropTypes.array
+};
 
 export default Summary

@@ -1,17 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Summary from './Summary';
+import SummaryContainer from '../containers/SummaryContainer';
 import Button from './Button';
 
-function Header({ desires }) {
+function Header() {
     return (
         <header className="header">
-            <img src="/img/Hiking.png" alt="hiking" className="main-logo"/>
+            <img src="/img/hiking.png" alt="hiking" className="main-logo"/>
 
             <h3 className="title">Looking forward to...</h3>
 
-            <Summary desires={desires}/>
+            <SummaryContainer/>
 
             <NavLink to="/new-desire">
                 <Button icon="plus"/>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 
 function Checkbox({ isCompleted, action }) {
@@ -8,5 +9,10 @@ function Checkbox({ isCompleted, action }) {
         </div>
     )
 }
+
+Checkbox.propTypes = {
+    isCompleted: PropTypes.bool,
+    action: PropTypes.func
+};
 
 export default Checkbox

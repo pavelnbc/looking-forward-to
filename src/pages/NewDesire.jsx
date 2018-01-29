@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { NavLink, Redirect } from 'react-router-dom';
 import { ControlLabel, FormControl } from 'react-bootstrap';
 
@@ -64,5 +66,9 @@ class NewDesire extends Component {
         )
     }
 }
+
+NewDesire.propTypes = {
+    handleAdd: PropTypes.func
+};
 
 export default NewDesire

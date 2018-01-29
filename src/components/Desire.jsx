@@ -97,7 +97,13 @@ class Desire extends Component {
 }
 
 Desire.propTypes = {
-    data: PropTypes.object
-}
+    data: PropTypes.object,
+    onDelete: PropTypes.func,
+    onCheck: PropTypes.func,
+    onEdit: PropTypes.func,
+    onEditForm: PropTypes.func,
+    onDescriptionField: PropTypes.func,
+    addComment: PropTypes.func
+};
 
 export default Desire
