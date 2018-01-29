@@ -12,10 +12,6 @@ class Desire extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            isEditing: false,
-        };
-
         this.onSubmit = this.onSubmit.bind(this);
     }
 

@@ -53,6 +53,9 @@ function desireReducer(state = [], action) {
                 } else {
                     desire.isDescriptionOpen = false
                 }
+
+                desire.isEditing = false;
+
                 return desire
             });
 

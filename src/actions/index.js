@@ -61,8 +61,9 @@ export function openEditForm(id) {
 
 export function openDescriptionField(id) {
     let param1 = "isDescriptionOpen";
+    let param2 = "isEditing";
 
-    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-description-field/${id}`, { param1 })
+    return axios.put(`https://looking-server.herokuapp.com/api/v1/open-description-field/${id}`, { param1, param2 })
         .then(response => response.data)
         .then(id => ({
             type: OPEN_DESCRIPTION_FIELD,
