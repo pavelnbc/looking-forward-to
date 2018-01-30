@@ -29,6 +29,9 @@ function desireReducer(state = [], action) {
                     desire.isCompleted = !desire.isCompleted;
                     desire.isDescriptionOpen = false
                 }
+
+                desire.isEditing = false;
+
                 return desire
             });
 
@@ -38,10 +41,12 @@ function desireReducer(state = [], action) {
             let opened_desire_form = state.filter((desire) => {
                 if(desire.id === action.id) {
                     desire.isEditing = true
-                    desire.isDescriptionOpen = false
                 } else {
                     desire.isEditing = false
                 }
+
+                desire.isDescriptionOpen = false
+
                 return desire
             });
 

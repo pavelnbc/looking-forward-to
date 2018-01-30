@@ -7,7 +7,8 @@ function Summary({ desires }) {
     });
 
     return (
-        <tbody className="summary">
+        <table className="summary">
+            <tbody>
             <tr>
                 <th>All together</th>
                 <td>{desires.length}</td>
@@ -20,7 +21,8 @@ function Summary({ desires }) {
                 <th>Completed</th>
                 <td>{completed.length}</td>
             </tr>
-        </tbody>
+            </tbody>
+        </table>
     )
 }
 
