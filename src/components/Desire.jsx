@@ -17,9 +17,6 @@ class Desire extends Component {
 
     onSubmit(event) {
         event.preventDefault();
-        this.setState({
-            isEditing: false,
-        });
 
         this.props.onEdit(this.props.data.id, this.title.value)
     }

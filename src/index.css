@@ -105,6 +105,10 @@ body {
   background-color: lightgrey;
 }
 
+.desire .button:hover .fa {
+  color: darkslategrey;
+}
+
 .desire .button:active {
   opacity: 0.5;
 }
@@ -140,12 +144,23 @@ body {
 }
 
 .desire-form .fa-pencil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   position: absolute;
   right: 20px;
-  top: 25px;
+  top: 15px;
   font-size: 20px;
   color: grey;
   cursor: pointer;
+}
+
+.desire-form .fa-pencil:hover {
+  background-color: lightgrey;
+  color: darkslategrey;
 }
 
 .desire-completed {
@@ -236,7 +251,6 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  /*background-color: lightgrey;*/
 }
 
 .new-desire .button:hover {

@@ -59,8 +59,14 @@ class NewDesire extends Component {
                                  placeholder="Looking forward to..."
                                  onChange={this.handleSendBtn}
                     />
-                    <ControlLabel>Please, describe your feelings, which you want to experience on the road to your dream...</ControlLabel>
-                    <FormControl inputRef={(textA) => this.textA = textA} componentClass="textarea" rows="10" placeholder="Tell me your dreams..."/>
+                    <ControlLabel>
+                        Please, describe your feelings, which you want to experience on the road to your dream...
+                    </ControlLabel>
+                    <FormControl inputRef={(textA) => this.textA = textA}
+                                 componentClass="textarea"
+                                 rows="10"
+                                 placeholder="Tell me about your dreams..."
+                    />
                 </form>
               </main>
         )
