@@ -31,6 +31,21 @@ body {
   font-family: 'Anime Ace', arial;
 }
 
+.header .button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid grey;
+  border-radius: 50%;
+}
+
+.header .button:hover {
+  background-color: gray;
+  color: navajowhite;
+}
+
 .header .main-logo{
   width: 50px;
   margin: 10px;
@@ -49,7 +64,7 @@ body {
 }
 
 .header .fa{
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -244,19 +259,6 @@ body {
   margin: auto;
 }
 
-.new-desire .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-}
-
-.new-desire .button:hover {
-  background-color: lightsalmon;
-}
-
 .new-desire .header .fa{
   font-size: 25px;
 }
@@ -283,6 +285,7 @@ body {
   outline: none;
   font-family: Georgia;
   font-size: 14px;
+  resize: none;
 }
 
 .new-desire .button .fa:active{

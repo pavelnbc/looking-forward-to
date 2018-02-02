@@ -8,6 +8,7 @@ export const EDIT_DESIRE = 'EDIT_DESIRE';
 export const OPEN_EDIT_FORM = 'OPEN_EDIT_FORM';
 export const OPEN_DESCRIPTION_FIELD = 'OPEN_DESCRIPTION_FIELD';
 export const ADD_COMMENT = 'ADD_COMMENT';
+export const CLOSE_DESIRE_ACTIONS = 'CLOSE_DESIRE_ACTIONS';
 
 export function downloadDesires() {
     return axios.get('https://looking-server.herokuapp.com/api/v1/desires')
@@ -79,6 +80,12 @@ export function addComment(id, comment) {
             comment: data.comment
         }))
         .catch((err) => console.log(err))
+}
+
+export function closeDesireActions() {
+    return {
+        type: CLOSE_DESIRE_ACTIONS
+    }
 }
 
 export function deleteDesire(id) {

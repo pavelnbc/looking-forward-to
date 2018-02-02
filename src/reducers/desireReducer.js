@@ -5,7 +5,8 @@ import { DOWNLOAD_DESIRES,
          DELETE_DESIRE,
          OPEN_DESCRIPTION_FIELD,
          OPEN_EDIT_FORM,
-         ADD_COMMENT
+         ADD_COMMENT,
+         CLOSE_DESIRE_ACTIONS
        }
 from '../actions';
 
@@ -84,6 +85,14 @@ function desireReducer(state = [], action) {
             });
 
             return delete_desires;
+
+        case CLOSE_DESIRE_ACTIONS:
+            state.forEach((desire) => {
+               desire.isEditing = false;
+               desire.isDescriptionOpen = false;
+            });
+
+
 
         case ADD_COMMENT:
             let comment_desires = state.filter((desire) => {

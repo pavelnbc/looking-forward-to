@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import SummaryContainer from '../containers/SummaryContainer';
 import Button from './Button';
 
-function Header() {
+function Header({ closeDesires }) {
     return (
         <header className="header">
             <img src="/img/hiking.png" alt="hiking" className="main-logo"/>
@@ -14,7 +14,7 @@ function Header() {
             <SummaryContainer/>
 
             <NavLink to="/new-desire">
-                <Button icon="plus"/>
+                <Button icon="plus" action={closeDesires}/>
             </NavLink>
         </header>
     )

@@ -29,6 +29,16 @@ class Desire extends Component {
         }
     }
 
+    componentDidMount() {
+        window.addEventListener('click', (event) => {
+            if(!event.target.classList.contains('fa-pencil') && event.target.tagName !== "INPUT" && this.title) {
+                console.log('hello');
+                console.log(this.title);
+                this.props.onEdit(this.props.data.id, this.title.value);
+            }
+        })
+    }
+
     render() {
         let { data, onDelete, onCheck, openEditForm, openDescriptionField, addComment } = this.props;
 
@@ -39,7 +49,7 @@ class Desire extends Component {
 
         let descriptionClass = classNames({
             "description-is-closed": true,
-            "description-is-opened": this.props.data.isDescriptionOpen
+            "description-is-opened": data.isDescriptionOpen
         });
 
         return (

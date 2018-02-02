@@ -1,6 +1,6 @@
 import React  from 'react';
 
-import Header from '../components/Header';
+import HeaderContainer from '../containers/HeaderContainer';
 import DesireListContainer from '../containers/DesireListContainer';
 import Footer from '../components/Footer';
 
@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 function MainPage() {
     return (
         <main className="main-page">
-            <Header/>
+            <HeaderContainer/>
             <DesireListContainer/>
             <Footer/>
         </main>
