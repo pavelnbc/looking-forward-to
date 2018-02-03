@@ -11,14 +11,16 @@ export const ADD_COMMENT = 'ADD_COMMENT';
 export const CLOSE_DESIRE_ACTIONS = 'CLOSE_DESIRE_ACTIONS';
 
 export function downloadDesires() {
-    return axios.get('https://looking-server.herokuapp.com/api/v1/desires')
-        .then(response => response.data)
-        .then(desires => ({
-            type: DOWNLOAD_DESIRES,
-            desires
-        }))
-        .catch((err) => console.log(err))
+        return axios.get('https://looking-server.herokuapp.com/api/v1/desires')
+            .then(response => response.data)
+            .then(desires => ({
+                type: DOWNLOAD_DESIRES,
+                desires
+            }))
+            .catch((err) => console.log(err))
 }
+
+
 
 export function completeDesire(id) {
     return axios.put(`https://looking-server.herokuapp.com/api/v1/complete-desire/${id}`)
