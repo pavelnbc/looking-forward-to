@@ -23,7 +23,11 @@ class Desire extends Component {
     }
 
     onSendComment(event) {
-        if(event.keyCode === 13 || event.keyCode === undefined) {       // undefined - для клика мыши
+        if(
+            event.keyCode === 13 ||
+            event.keyCode === undefined  &&     // undefined - для клика мыши
+            this.textArea.value
+        ) {
             this.props.addComment(this.props.data.id, this.textArea.value);
             this.textArea.value = ""
         }
@@ -88,6 +92,7 @@ class Desire extends Component {
                     ? <Comments comments={data.comments}/>
                     : null
                     }
+
                     <FormControl inputRef={(text) => this.textArea = text}
                                  className="comment-area"
                                  componentClass="textarea"
@@ -96,7 +101,6 @@ class Desire extends Component {
                                  placeholder="Let me know what you think about this"
                                  onKeyDown={this.onSendComment}
                     />
-
                     <div onClick={this.onSendComment}>
                         <FontAwesome name="send"/>
                     </div>
