@@ -92,8 +92,6 @@ function desireReducer(state = [], action) {
                desire.isDescriptionOpen = false;
             });
 
-
-
         case ADD_COMMENT:
             let comment_desires = state.filter((desire) => {
                 if(desire.id === action.id) {

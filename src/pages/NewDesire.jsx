@@ -53,7 +53,9 @@ class NewDesire extends Component {
                     </div>
                 </header>
                 <form onSubmit={this.handleAdd}>
-                    <ControlLabel>Please, put your new desire...</ControlLabel>
+                    <ControlLabel>
+                        Please, put your new desire...
+                    </ControlLabel>
                     <FormControl inputRef={(input) => this.title = input}
                                  type="text"
                                  placeholder="Looking forward to..."

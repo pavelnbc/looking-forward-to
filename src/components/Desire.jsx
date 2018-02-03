@@ -12,13 +12,21 @@ class Desire extends Component {
     constructor(props) {
         super(props);
 
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onEditDesire = this.onEditDesire.bind(this);
+        this.onSendComment = this.onSendComment.bind(this);
     }
 
-    onSubmit(event) {
+    onEditDesire(event) {
         event.preventDefault();
 
         this.props.onEdit(this.props.data.id, this.title.value)
+    }
+
+    onSendComment(event) {
+        if(event.keyCode === 13 || event.keyCode === undefined) {       // undefined - для клика мыши
+            this.props.addComment(this.props.data.id, this.textArea.value);
+            this.textArea.value = ""
+        }
     }
 
     componentDidUpdate() {
@@ -30,17 +38,19 @@ class Desire extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('click', (event) => {
-            if(!event.target.classList.contains('fa-pencil') && event.target.tagName !== "INPUT" && this.title) {
-                console.log('hello');
-                console.log(this.title);
+        window.addEventListener("click", event => {
+            if (
+                !event.target.classList.contains("fa-pencil") &&
+                event.target.tagName !== "INPUT" &&
+                this.title
+            ) {
                 this.props.onEdit(this.props.data.id, this.title.value);
             }
-        })
+        });
     }
 
     render() {
-        let { data, onDelete, onCheck, openEditForm, openDescriptionField, addComment } = this.props;
+        let { data, onDelete, onCheck, openEditForm, openDescriptionField } = this.props;
 
         let desireClass = classNames({
             desire: true,
@@ -54,9 +64,9 @@ class Desire extends Component {
 
         return (
             data.isEditing
-            ? <form className="desire-form" onSubmit={this.onSubmit}>
+            ? <form className="desire-form" onSubmit={this.onEditDesire}>
                 <FormControl type="text" defaultValue={data.title} inputRef={(input) => this.title = input}/>
-                <FontAwesome name="pencil" onClick={this.onSubmit}/>
+                <FontAwesome name="pencil" onClick={this.onEditDesire}/>
               </form>
             : <div >
                 <ListGroupItem className={desireClass}>
@@ -78,19 +88,16 @@ class Desire extends Component {
                     ? <Comments comments={data.comments}/>
                     : null
                     }
-
                     <FormControl inputRef={(text) => this.textArea = text}
                                  className="comment-area"
                                  componentClass="textarea"
                                  rows="1"
                                  wrap="hard"
                                  placeholder="Let me know what you think about this"
+                                 onKeyDown={this.onSendComment}
                     />
 
-                    <div onClick={() => {
-                        addComment(data.id, this.textArea.value);
-                        this.textArea.value = ""
-                    }}>
+                    <div onClick={this.onSendComment}>
                         <FontAwesome name="send"/>
                     </div>
                 </div>
