@@ -4,7 +4,7 @@ import { ListGroup } from 'react-bootstrap';
 
 import Desire from '../components/Desire';
 
-function DesireList({ desires, handleDelete, handleCheck, handleEdit, openForm, openDescription, addDesireComment }) {
+function DesireList({ desires, handleDelete, handleCommentDelete, handleCheck, handleEdit, openForm, openDescription, addDesireComment }) {
     return (
         <ListGroup>
             {desires.map((desire, index) => {
@@ -12,6 +12,7 @@ function DesireList({ desires, handleDelete, handleCheck, handleEdit, openForm, 
                     <Desire key={index}
                             data={desire}
                             onDelete={handleDelete}
+                            onCommentDelete={handleCommentDelete}
                             onCheck={handleCheck}
                             onEdit={handleEdit}
                             openEditForm={openForm}

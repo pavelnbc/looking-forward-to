@@ -42,7 +42,7 @@ class NewDesire extends Component {
         return (
             this.state.isFinished
             ? <Redirect to="/"/>
-            : <main className="new-desire">
+            : <section className="new-desire">
                 <header className="header">
                     <NavLink to="./">
                         <Button icon="long-arrow-left"/>
@@ -70,7 +70,7 @@ class NewDesire extends Component {
                                  placeholder="Tell me about your dreams..."
                     />
                 </form>
-              </main>
+              </section>
         )
     }
 }

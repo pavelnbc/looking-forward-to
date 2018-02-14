@@ -9,12 +9,7 @@ export const OPEN_EDIT_FORM = 'OPEN_EDIT_FORM';
 export const OPEN_DESCRIPTION_FIELD = 'OPEN_DESCRIPTION_FIELD';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const CLOSE_DESIRE_ACTIONS = 'CLOSE_DESIRE_ACTIONS';
-
-export function closeDesireActions() {
-    return {
-        type: CLOSE_DESIRE_ACTIONS
-    }
-}
+export const DELETE_COMMENT = 'DELETE_COMMENT';
 
 export function downloadDesires() {
         return axios.get('https://looking-server.herokuapp.com/api/v1/desires')
@@ -25,6 +20,8 @@ export function downloadDesires() {
             }))
             .catch((err) => console.log(err))
 }
+
+
 
 export function completeDesire(id) {
     return axios.put(`https://looking-server.herokuapp.com/api/v1/complete-desire/${id}`)
@@ -88,6 +85,12 @@ export function addComment(id, comment) {
         .catch((err) => console.log(err))
 }
 
+export function closeDesireActions() {
+    return {
+        type: CLOSE_DESIRE_ACTIONS
+    }
+}
+
 export function deleteDesire(id) {
     return axios.delete(`https://looking-server.herokuapp.com/api/v1/delete-desire/${id}`)
         .then(response => response.data)
@@ -97,4 +100,15 @@ export function deleteDesire(id) {
         }))
         .catch((err) => console.log(err))
 
+}
+
+export function deleteComment(id, commentId) {
+    return axios.delete(`https://looking-server.herokuapp.com/api/v1/delete-comment/${id}/${commentId}` )
+        .then(response => response.data)
+        .then(() => ({
+            type: DELETE_COMMENT,
+            id,
+            commentId
+        }))
+        .catch((err) => console.log(err))
 }

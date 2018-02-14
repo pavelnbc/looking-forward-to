@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import FontAwesome from 'react-fontawesome';
 
-function Comments({ comments }) {
+import Button from './Button';
+
+function Comments({ id, comments, deleteComment }) {
     return (
         <div className="comments">
             {comments.map((comment, index) => {
                 return (
-                    <div className="comment" key={index}>
+                    <section className="comment" key={index}>
                         <div>
                             <FontAwesome name="comment"/>
                         </div>
-                        <span>{comment}</span>
-                    </div>
+                        <span>{comment ? comment.title : null}</span>
+                        <Button icon="times" action={() => deleteComment(id, comment.id)}/>
+                    </section>
                 )
             })}
         </div>
@@ -22,6 +24,6 @@ function Comments({ comments }) {
 
 Comment.propTypes = {
     comments: PropTypes.array
-}
+};
 
 export default Comments

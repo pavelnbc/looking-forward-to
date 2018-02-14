@@ -28,10 +28,12 @@ class Desire extends Component {
             event.keyCode === undefined  &&     // undefined - для клика мыши
             this.textArea.value
         ) {
+            event.preventDefault();
             this.props.addComment(this.props.data.id, this.textArea.value);
             this.textArea.value = ""
         }
     }
+
 
     componentDidUpdate() {
         if(this.props.data.isEditing) {
@@ -54,7 +56,7 @@ class Desire extends Component {
     }
 
     render() {
-        let { data, onDelete, onCheck, openEditForm, openDescriptionField } = this.props;
+        let { data, onDelete, onCommentDelete, onCheck, openEditForm, openDescriptionField } = this.props;
 
         let desireClass = classNames({
             desire: true,
@@ -72,7 +74,7 @@ class Desire extends Component {
                 <FormControl type="text" defaultValue={data.title} inputRef={(input) => this.title = input}/>
                 <FontAwesome name="pencil" onClick={this.onEditDesire}/>
               </form>
-            : <div >
+            : <section>
                 <ListGroupItem className={desireClass}>
                     <Checkbox isCompleted={data.isCompleted} action={() => onCheck(data.id)}/>
 
@@ -89,23 +91,23 @@ class Desire extends Component {
                     {data.description ? <p>{data.description}</p> : <p>No description</p>}
 
                     {data.comments
-                    ? <Comments comments={data.comments}/>
+                    ? <Comments id={data.id} comments={data.comments} deleteComment={onCommentDelete}/>
                     : null
                     }
-
-                    <FormControl inputRef={(text) => this.textArea = text}
-                                 className="comment-area"
-                                 componentClass="textarea"
-                                 rows="1"
-                                 wrap="hard"
-                                 placeholder="Let me know what you think about this"
-                                 onKeyDown={this.onSendComment}
-                    />
-                    <div onClick={this.onSendComment}>
-                        <FontAwesome name="send"/>
-                    </div>
+                    <section className="comment-area">
+                        <FormControl inputRef={(text) => this.textArea = text}
+                                     componentClass="textarea"
+                                     rows="1"
+                                     wrap="hard"
+                                     placeholder="Let me know what you think about this"
+                                     onKeyDown={this.onSendComment}
+                        />
+                        <div onClick={this.onSendComment}>
+                            <FontAwesome name="send"/>
+                        </div>
+                    </section>
                 </div>
-              </div>
+              </section>
         )
     }
 }

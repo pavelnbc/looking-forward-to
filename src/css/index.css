@@ -2,16 +2,11 @@
   font-family: 'Anime Ace';
   font-style: normal;
   font-weight: 400;
-  src: local('Anime Ace'), local('AnimeAce-Regular'),
-  url(https://allfont.ru/cache/fonts/anime-ace_e18829f48f41e48880e951d47a6111bd.woff) format('woff'),
-  url(https://allfont.ru/cache/fonts/anime-ace_e18829f48f41e48880e951d47a6111bd.ttf) format('truetype');
-}
-
+  src: local("Anime Ace"), local("AnimeAce-Regular"), url(https://allfont.ru/cache/fonts/anime-ace_e18829f48f41e48880e951d47a6111bd.woff) format("woff"), url(https://allfont.ru/cache/fonts/anime-ace_e18829f48f41e48880e951d47a6111bd.ttf) format("truetype"); }
 body {
   display: flex;
   justify-content: center;
-  background-color: ghostwhite;
-}
+  background-color: ghostwhite; }
 
 .app {
   width: 47vw;
@@ -19,8 +14,7 @@ body {
   min-height: 100px;
   margin-top: 50px;
   border: 3px solid darkgray;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
 .header {
   display: flex;
@@ -28,128 +22,105 @@ body {
   align-items: center;
   height: 80px;
   background-color: lightblue;
-  font-family: 'Anime Ace', arial;
-}
+  font-family: 'Anime Ace', arial; }
 
-.header .button{
+.header .button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
-  margin-left: 1em;
-  margin-right: .25em;
   border: 2px solid darkslategrey;
-  border-radius: 50%;
-}
+  border-radius: 50%; }
 
 .header .button:hover {
   background-color: gray;
-  color: navajowhite;
-}
+  color: navajowhite; }
 
-.header .main-logo{
+.header .main-logo {
   width: 50px;
   margin: 10px;
-  border-radius: 3px;
-}
+  border-radius: 3px; }
 
 .header .summary {
   text-align: left;
-  font-size: 12px;
-}
+  font-size: 12px; }
 
 .header .summary td {
   vertical-align: top;
   border-left: 10px solid transparent;
-  padding: 3px
-}
+  padding: 3px; }
 
-.header .fa{
+.header .fa {
   font-size: 30px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-.header a{
+.header a {
+  margin-left: 1em;
+  margin-right: .25em;
   text-decoration: none;
-  color: black;
-}
+  color: black; }
 
 .header a:active {
-  opacity: 0.5;
-}
+  opacity: 0.5; }
 
 .desire {
   display: flex;
   align-items: center;
   padding: 14px 20px;
   background-color: whitesmoke;
-  border-bottom: 1px solid lightgrey;
-}
+  border-bottom: 1px solid lightgrey; }
 
 .desire .checkbox {
   vertical-align: bottom;
-  margin-right: 20px;
-}
+  margin-right: 20px; }
 
 .desire .fa {
   font-size: 25px;
-  color: gray;
-}
+  color: gray; }
 
 .desire .title {
   font-size: 16px;
   color: grey;
   font-family: sans-serif;
-  margin-right: auto;
-}
-
+  margin-right: auto; }
 
 .desire .button {
   display: flex;
   justify-content: center;
-  text-align: center;
   width: 45px;
   height: 45px;
   margin-left: 5px;
   border-radius: 50%;
   background-color: transparent;
   text-align: center;
-  transition: 100ms;
-}
+  transition: 100ms; }
 
 .desire .button:hover {
-  background-color: lightgrey;
-}
+  background-color: lightgrey; }
 
 .desire .button:hover .fa {
-  color: darkslategrey;
-}
+  color: darkslategrey; }
 
 .desire .button:active {
-  opacity: 0.5;
-}
+  opacity: 0.5; }
 
 .desire .button .fa {
   display: none;
   font-size: 20px;
   cursor: pointer;
   font-weight: normal;
-  margin: auto;
-}
+  margin: auto; }
 
 .desire:hover .button .fa {
-  display: block;
-}
+  display: block; }
 
 .desire .checkbox {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .desire-form {
   position: relative;
-  border: 2px solid gray;
-}
+  border: 2px solid gray; }
 
 .desire-form input {
   width: 100%;
@@ -157,8 +128,7 @@ body {
   padding: 14px 20px;
   font-size: 16px;
   box-sizing: border-box;
-  outline: none;
-}
+  outline: none; }
 
 .desire-form .fa-pencil {
   display: flex;
@@ -172,24 +142,20 @@ body {
   top: 15px;
   font-size: 20px;
   color: grey;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .desire-form .fa-pencil:hover {
   background-color: lightgrey;
-  color: darkslategrey;
-}
+  color: darkslategrey; }
 
 .desire-completed {
-  opacity: 0.5;
-}
+  opacity: 0.5; }
+
 .desire-completed .checkbox {
-  margin-right: 16.5px;
-}
+  margin-right: 16.5px; }
 
 .desire-completed .title {
-  text-decoration: line-through;
-}
+  text-decoration: line-through; }
 
 .description-is-closed {
   position: relative;
@@ -197,37 +163,35 @@ body {
   padding: 15px;
   border-bottom: 1px solid lightgrey;
   color: dimgray;
-  transition: display, 500ms;
-}
+  transition: 300ms; }
 
 .description-is-opened {
-  display: block;
-}
+  display: block; }
 
-.description-is-closed .comment-area{
+.description-is-closed .comment-area {
+  margin-top: 25px;
+  position: relative; }
+
+.description-is-closed .comment-area textarea {
   width: 100%;
   overflow: hidden;
-  margin-top: 10px;
+  margin: 0;
   padding-right: 40px;
   border: 1px solid dimgray;
   border-radius: 5px;
   box-sizing: border-box;
-  resize: none;
-}
+  resize: none; }
 
 .description-is-closed .fa-send {
   position: absolute;
-  bottom: 43px;
-  right: 30px;
-  cursor: pointer;
-}
+  bottom: 17px;
+  right: 13px;
+  cursor: pointer; }
 
 .description-is-closed .comments {
-  /*margin-top: 40px;*/
   padding: 0 10px;
   font-size: 13px;
-  color: darkslategray;
-}
+  color: darkslategray; }
 
 .description-is-closed .comments .comment {
   display: flex;
@@ -236,38 +200,41 @@ body {
   min-height: 40px;
   padding: 5px 10px;
   word-break: break-all;
-  border-bottom: 1px solid lightgrey;
-}
+  border-bottom: 1px solid lightgrey; }
 
-.description-is-closed .comments .comment span{
-  margin-right: auto;
-}
+.description-is-closed .comments .comment span {
+  margin-right: auto; }
 
 .description-is-closed .comments .comment .fa-comment {
   margin-right: 15px;
   font-size: 20px;
-  color: grey;
-}
+  color: grey; }
 
 .description-is-closed .comments p {
-  padding-bottom: 7px;
-}
+  padding-bottom: 7px; }
+
+.description-is-closed .comments .comment .button {
+  align-self: flex-start;
+  margin-left: 10px;
+  font-size: 11px;
+  color: grey;
+  border-radius: 50px;
+  cursor: pointer; }
+
+.description-is-closed .comments .comment .button:hover {
+  color: darkslategrey; }
 
 .new-desire .header {
-  padding: 0 30px;
-}
+  padding: 0 30px; }
 
-.new-desire .header h3{
-  margin: auto;
-}
+.new-desire .header h3 {
+  margin: auto; }
 
-.new-desire .header .fa{
-  font-size: 25px;
-}
+.new-desire .header .fa {
+  font-size: 25px; }
 
-.new-desire .header div:nth-child(3){
-  opacity: 0.25;
-}
+.new-desire .header div:nth-child(3) {
+  opacity: 0.25; }
 
 .new-desire form {
   display: flex;
@@ -275,8 +242,7 @@ body {
   padding: 20px 30px;
   font-family: 'Anime Ace', arial;
   font-size: 12px;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .new-desire form input, textarea {
   margin-top: 10px;
@@ -285,14 +251,12 @@ body {
   border: 0;
   border-bottom: 1px solid lightgrey;
   outline: none;
-  font-family: Georgia;
+  font-family: Georgia, Arial;
   font-size: 14px;
-  resize: none;
-}
+  resize: none; }
 
-.new-desire .button .fa:active{
-  opacity: 0.5;
-}
+.new-desire .button .fa:active {
+  opacity: 0.5; }
 
 footer {
   display: flex;
@@ -301,5 +265,6 @@ footer {
   padding: 0 30px;
   font-size: 14px;
   color: gray;
-  background-color: whitesmoke;
-}
+  background-color: whitesmoke; }
+
+/*# sourceMappingURL=index.css.map */

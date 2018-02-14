@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import DesireList from '../components/DesireList';
-import { deleteDesire, completeDesire, editDesire, openEditForm, openDescriptionField, addComment } from '../actions'
+import { deleteDesire, deleteComment, completeDesire, editDesire, openEditForm, openDescriptionField, addComment } from '../actions'
 
 function mapStateToProps(state) {
     return {
@@ -12,11 +12,13 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         handleDelete: (id) => dispatch(deleteDesire(id)),
+
         handleCheck: (id) => dispatch(completeDesire(id)),
         handleEdit: (id, title) => dispatch(editDesire(id, title)),
         openForm: (id) => dispatch(openEditForm(id)),
         openDescription: (id) => dispatch(openDescriptionField(id)),
-        addDesireComment: (id, comment) => dispatch(addComment(id, comment))
+        addDesireComment: (id, comment) => dispatch(addComment(id, comment)),
+        handleCommentDelete: (id, commentId) => dispatch(deleteComment(id, commentId))
     }
 }
 
